@@ -30,7 +30,7 @@ const Hero = () => {
 
 
   return (
-    <section style={{ 
+    <section id="hero" style={{ 
       position: 'relative', 
       height: '100vh', 
       width: '100%',

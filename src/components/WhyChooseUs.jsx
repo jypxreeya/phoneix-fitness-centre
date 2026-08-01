@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
   const yImage = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <section id="about" ref={containerRef} className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section id="about" ref={containerRef} className="section-padding section-charcoal" style={{ position: 'relative', overflow: 'hidden' }}>
       
       {/* Background with subtle parallax overlay */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>

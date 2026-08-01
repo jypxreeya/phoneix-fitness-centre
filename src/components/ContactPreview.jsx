@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaPhone, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 const ContactPreview = () => {
+  useEffect(() => {
+    if (window.location.hash === '#contact') {
+      const nameInput = document.getElementById('contact-name');
+      if (nameInput) {
+        setTimeout(() => nameInput.focus(), 800);
+      }
+    }
+  }, []);
+
   return (
-    <section className="section-padding container">
+    <section id="contact" className="section-padding container">
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '1rem' }}>Get In <span className="text-accent">Touch</span></h2>
         <p className="text-gray" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '1.1rem' }}>
@@ -26,7 +35,7 @@ const ContactPreview = () => {
             <h3 style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Send a Message</h3>
             
             <div style={{ marginBottom: '1.5rem' }}>
-              <input type="text" placeholder="Your Name" style={inputStyle} required />
+              <input id="contact-name" type="text" placeholder="Your Name" style={inputStyle} required />
             </div>
             
             <div style={{ marginBottom: '1.5rem' }}>

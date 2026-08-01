@@ -10,10 +10,10 @@ const Footer = () => {
           
           {/* Brand Info */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-              <div style={{ width: '32px', height: '32px', backgroundColor: 'var(--accent-red)', borderRadius: '4px' }}></div>
-              <span style={{ fontSize: '1.25rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
-                Phoenix
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '1.5rem' }}>
+              <img src="/assets/logo.jpg" alt="Phoenix Logo" style={{ width: '45px', height: '45px', objectFit: 'contain', borderRadius: '6px' }} />
+              <span style={{ fontSize: '1rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', lineHeight: 1.2, color: 'var(--text-white)' }}>
+                Phoenix High Performance<br/>& Fitness Centre
               </span>
             </div>
             <p className="text-gray" style={{ lineHeight: 1.6, marginBottom: '1.5rem' }}>
@@ -29,10 +29,11 @@ const Footer = () => {
           <div>
             <h4 style={{ marginBottom: '1.5rem', fontSize: '1.1rem' }}>Quick Links</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <li><a href="/#hero" className="footer-link" style={{ textDecoration: 'none' }}>Home</a></li>
               <li><a href="/#about" className="footer-link" style={{ textDecoration: 'none' }}>About Us</a></li>
-              <li><Link to="/gallery" className="footer-link">Gallery</Link></li>
-              <li><Link to="/trainers" className="footer-link">Our Trainers</Link></li>
-              <li><Link to="/contact" className="footer-link">Contact</Link></li>
+              <li><a href="/#gallery" className="footer-link" style={{ textDecoration: 'none' }}>Gallery</a></li>
+              <li><a href="/#trainers" className="footer-link" style={{ textDecoration: 'none' }}>Our Trainers</a></li>
+              <li><a href="/#contact" className="footer-link" style={{ textDecoration: 'none' }}>Contact</a></li>
             </ul>
           </div>
 

@@ -1,118 +1,147 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, FreeMode } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/free-mode';
 
-const images = [
-  { id: 1, src: '/assets/win1.jpg', category: 'Events' },
-  { id: 2, src: '/assets/win2.jpg', category: 'Competitions' },
-  { id: 3, src: '/assets/win3.jpg', category: 'Events' },
-  { id: 4, src: '/assets/win 4.jpg', category: 'Gym Interior' },
-  { id: 5, src: '/assets/win 5.jpg', category: 'Gym Interior' },
-  { id: 6, src: '/assets/win 6.jpg', category: 'Competitions' },
-  { id: 7, src: '/assets/win 7.jpg', category: 'Events' },
-  { id: 8, src: '/assets/win8.jpg', category: 'Competitions' }
+// Excluded: trainer1, trainer2, logo
+const galleryMedia = [
+  { id: 1, type: 'image', src: '/assets/win 4.jpg' },
+  { id: 2, type: 'image', src: '/assets/win 5.jpg' },
+  { id: 3, type: 'image', src: '/assets/win1.jpg' },
+  { id: 4, type: 'image', src: '/assets/win2.jpg' },
+  { id: 5, type: 'image', src: '/assets/win3.jpg' },
+  { id: 6, type: 'image', src: '/assets/win 6.jpg' },
+  { id: 7, type: 'image', src: '/assets/win 7.jpg' },
+  { id: 8, type: 'image', src: '/assets/win8.jpg' },
+  { id: 9, type: 'image', src: '/assets/t1.jpg' },
+  { id: 10, type: 'image', src: '/assets/t2.jpg' }
+  // To add a video, use: { id: 11, type: 'video', src: '/assets/sample.mp4' }
 ];
 
-const categories = ['All', 'Gym Interior', 'Events', 'Competitions'];
-
 const GalleryPreview = () => {
-  const [filter, setFilter] = useState('All');
-  const [selectedImg, setSelectedImg] = useState(null);
-
-  const filteredImages = filter === 'All' 
-    ? images 
-    : images.filter(img => img.category === filter);
-
   return (
-    <section className="section-padding container">
-      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '1rem' }}>Our <span className="text-accent">Facility</span></h2>
-        <p className="text-gray" style={{ maxWidth: '600px', margin: '0 auto' }}>
-          Take a look inside the ultimate high-performance centre in Chennai.
-        </p>
+    <section id="gallery" className="section-padding" style={{ backgroundColor: 'var(--primary-black)', overflow: 'hidden' }}>
+      <div className="container" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '1rem' }}
+        >
+          Our <span className="text-accent">Gallery</span>
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-gray" 
+          style={{ maxWidth: '600px', margin: '0 auto', fontSize: '1.1rem' }}
+        >
+          Experience the atmosphere, training sessions, and memorable moments at Phoenix High Performance & Fitness Centre.
+        </motion.p>
       </div>
 
-      {/* Filters */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-        {categories.map(cat => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            style={{
-              padding: '0.5rem 1.5rem',
-              borderRadius: '30px',
-              border: `1px solid ${filter === cat ? 'var(--accent-red)' : 'rgba(255,255,255,0.2)'}`,
-              backgroundColor: filter === cat ? 'var(--accent-red)' : 'transparent',
-              color: 'var(--text-white)',
-              transition: 'all 0.3s ease',
-              fontWeight: 600,
-              textTransform: 'uppercase',
-              fontSize: '0.85rem'
-            }}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* Masonry Grid using CSS Columns */}
-      <div style={{ columnCount: 3, columnGap: '1.5rem', '@media (max-width: 768px)': { columnCount: 1 } }} className="masonry-grid">
-        <AnimatePresence>
-          {filteredImages.map((img) => (
-            <motion.div
-              key={img.id}
-              layout
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.4 }}
-              style={{ marginBottom: '1.5rem', breakInside: 'avoid', cursor: 'pointer', overflow: 'hidden', borderRadius: '12px' }}
-              onClick={() => setSelectedImg(img.src)}
-              whileHover={{ scale: 1.02 }}
-            >
-              <img src={img.src} alt="Gallery" style={{ width: '100%', borderRadius: '12px', display: 'block', transition: 'transform 0.5s ease' }} className="gallery-img" />
-            </motion.div>
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8 }}
+        className="marquee-container"
+      >
+        <Swiper
+          modules={[Autoplay, FreeMode]}
+          spaceBetween={30}
+          slidesPerView={'auto'}
+          loop={true}
+          speed={4000} // Linear scrolling speed
+          freeMode={true}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }}
+          allowTouchMove={true}
+          className="seamless-marquee"
+          style={{ width: '100%', padding: '1rem 0' }}
+        >
+          {galleryMedia.map((media) => (
+            <SwiperSlide key={media.id} style={{ width: 'auto', height: '400px' }}>
+              <div 
+                className="gallery-media-wrapper"
+                style={{ 
+                  height: '100%', 
+                  borderRadius: '16px', 
+                  overflow: 'hidden',
+                  position: 'relative'
+                }}
+              >
+                {media.type === 'video' ? (
+                  <video 
+                    src={media.src} 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                    style={{ height: '100%', width: 'auto', objectFit: 'cover' }} 
+                  />
+                ) : (
+                  <img 
+                    src={media.src} 
+                    alt="Phoenix Gallery" 
+                    loading="lazy"
+                    style={{ height: '100%', width: 'auto', objectFit: 'cover' }} 
+                    className="gallery-img-marquee"
+                  />
+                )}
+                <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>
+            </SwiperSlide>
           ))}
-        </AnimatePresence>
-      </div>
-
-      {/* Lightbox */}
-      <AnimatePresence>
-        {selectedImg && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            style={{
-              position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
-              backgroundColor: 'rgba(0,0,0,0.95)', zIndex: 1000,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              padding: '2rem'
-            }}
-            onClick={() => setSelectedImg(null)}
-          >
-            <motion.img 
-              src={selectedImg} 
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              style={{ maxHeight: '90vh', maxWidth: '100%', borderRadius: '8px', objectFit: 'contain' }} 
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </Swiper>
+      </motion.div>
 
       <style>{`
-        .masonry-grid {
-          column-count: 3;
+        /* Make the transition linear for a smooth continuous scroll */
+        .seamless-marquee .swiper-wrapper {
+          transition-timing-function: linear !important;
         }
-        @media (max-width: 992px) {
-          .masonry-grid { column-count: 2; }
+
+        /* Subtle enter/leave zoom effect */
+        .gallery-media-wrapper {
+          transition: transform 0.6s ease;
+          transform: scale(0.95);
         }
-        @media (max-width: 576px) {
-          .masonry-grid { column-count: 1; }
+        
+        .swiper-slide-active .gallery-media-wrapper,
+        .swiper-slide-next .gallery-media-wrapper,
+        .swiper-slide-next + .swiper-slide .gallery-media-wrapper {
+          transform: scale(1);
         }
-        .gallery-img:hover {
-          transform: scale(1.05);
+
+        /* Optional: give slides that are far on edges a slight fade or scale */
+        .seamless-marquee .swiper-slide {
+          opacity: 0.7;
+          transition: opacity 0.5s ease;
+        }
+        .seamless-marquee .swiper-slide-active,
+        .seamless-marquee .swiper-slide-next,
+        .seamless-marquee .swiper-slide-next + .swiper-slide {
+          opacity: 1;
+        }
+
+        /* Responsive Height */
+        @media (max-width: 768px) {
+          .seamless-marquee .swiper-slide {
+            height: 300px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .seamless-marquee .swiper-slide {
+            height: 250px !important;
+          }
         }
       `}</style>
     </section>

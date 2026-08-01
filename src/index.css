@@ -107,6 +107,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 6rem 0;
 }
 
+.section-charcoal {
+  background-color: var(--secondary-charcoal);
+  border-top: 1px solid rgba(229, 9, 20, 0.2);
+  border-bottom: 1px solid rgba(229, 9, 20, 0.2);
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+}
+
 /* Buttons */
 .btn-primary {
   background-color: var(--accent-red);

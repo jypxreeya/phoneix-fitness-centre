@@ -27,11 +27,11 @@ const Header = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '#about', isAnchor: true },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Trainers', path: '/trainers' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: '/#hero', isAnchor: true },
+    { name: 'About', path: '/#about', isAnchor: true },
+    { name: 'Gallery', path: '/#gallery', isAnchor: true },
+    { name: 'Trainers', path: '/#trainers', isAnchor: true },
+    { name: 'Contact', path: '/#contact', isAnchor: true },
   ];
 
   return (
@@ -100,9 +100,9 @@ const Header = () => {
                 </Link>
               )
             ))}
-            <Link to="/contact" className="btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem' }}>
+            <a href="/#contact" className="btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem', textDecoration: 'none' }}>
               Book Now
-            </Link>
+            </a>
           </nav>
 
           {/* Mobile Menu Toggle */}
