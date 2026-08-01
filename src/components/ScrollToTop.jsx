@@ -5,7 +5,15 @@ const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) {
+    if (hash) {
+      // Wait for DOM to render before attempting to scroll
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
       window.scrollTo(0, 0);
     }
   }, [pathname, hash]);

@@ -65,7 +65,7 @@ const Footer = () => {
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }} className="text-gray">
                 <FaEnvelope style={{ color: 'var(--accent-red)' }} />
-                <a href="mailto:info@phoenixfitness.com" className="footer-link" style={{ textDecoration: 'none' }}>info@phoenixfitness.com</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=phoenixsportsacademychennai@gmail.com" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ textDecoration: 'none' }}>phoenixsportsacademychennai@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -80,6 +80,16 @@ const Footer = () => {
             <Link to="#" className="text-gray" style={{ fontSize: '0.9rem' }}>Terms of Service</Link>
           </div>
         </div>
+
+        {/* Developer Credit */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: '2rem', paddingTop: '2rem', textAlign: 'center' }}>
+          <p className="text-gray" style={{ fontSize: '0.85rem', margin: 0, letterSpacing: '0.5px' }}>
+            Website Designed & Developed by <span style={{ color: 'var(--text-white)', fontWeight: 600 }}>Jayapriya</span>
+          </p>
+          <p className="text-gray" style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
+            Email: <a href="mailto:jayapriyakalidas@gmail.com" className="dev-link" style={{ textDecoration: 'none', transition: 'color 0.3s ease' }}>jayapriyakalidas@gmail.com</a>
+          </p>
+        </div>
       </div>
       
       <style>{`
@@ -92,6 +102,12 @@ const Footer = () => {
           color: var(--accent-red);
         }
         .social-icon:hover {
+          color: var(--accent-red) !important;
+        }
+        .dev-link {
+          color: var(--text-gray);
+        }
+        .dev-link:hover {
           color: var(--accent-red) !important;
         }
       `}</style>

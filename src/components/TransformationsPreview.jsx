@@ -10,7 +10,7 @@ const transformations = [
   {
     id: 1,
     image: '/assets/t1.jpg',
-    name: 'Rahul K.',
+    name: 'mr.bala',
     duration: '12 Weeks',
     result: '-15kg Body Fat',
     quote: '"Phoenix changed my life. The scientific approach to training and nutrition made all the difference."'
@@ -18,8 +18,15 @@ const transformations = [
   {
     id: 2,
     image: '/assets/t2.jpg',
-    name: 'Vikram S.',
-    duration: '16 Weeks',
+    name: '',
+    duration: '120 days transformation',
+    result: '+8kg Muscle Mass',
+    quote: '"I was stuck at a plateau for years. The coaches here unlocked my true strength potential."'
+  },{
+    id: 2,
+    image: '/assets/t3.jpg',
+    name: 'shalini',
+    duration: '120 days transformation',
     result: '+8kg Muscle Mass',
     quote: '"I was stuck at a plateau for years. The coaches here unlocked my true strength potential."'
   }
