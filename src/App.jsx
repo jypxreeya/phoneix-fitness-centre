@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Lenis from 'lenis';
 import Home from './pages/Home';
+import Programs from './pages/Programs';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   useEffect(() => {
@@ -36,11 +38,12 @@ function App() {
     <HelmetProvider>
       <Router>
         <div className="app">
+          <ScrollToTop />
           <Header />
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* Other routes will be added here */}
+              <Route path="/programs" element={<Programs />} />
             </Routes>
           </main>
           <Footer />
