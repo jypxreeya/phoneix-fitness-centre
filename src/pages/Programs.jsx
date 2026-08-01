@@ -146,7 +146,7 @@ const Programs = () => {
               }}>
                 <div style={{
                   position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-                  backgroundImage: \`url("\${category.bgImage}")\`,
+                  backgroundImage: `url("${category.bgImage}")`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   zIndex: 0
@@ -228,14 +228,7 @@ const Programs = () => {
                       {service.desc}
                     </p>
                     
-                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                      <Link to="/contact" className="btn-primary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem', flex: 1, textAlign: 'center' }}>
-                        Join Now
-                      </Link>
-                      <Link to="/contact" className="btn-secondary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem', flex: 1, textAlign: 'center', borderWidth: '1px' }}>
-                        Consult
-                      </Link>
-                    </div>
+
                   </motion.div>
                 ))}
               </div>
