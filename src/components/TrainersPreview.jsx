@@ -151,9 +151,7 @@ const TrainersPreview = () => {
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-              <Link to="/contact" className="btn-primary" style={{ padding: '0.8rem 2rem' }}>
-                Train With Me
-              </Link>
+
               <a href="https://instagram.com/hariharan__venkatesan" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-white)', textDecoration: 'none', fontWeight: 600, fontSize: '1rem' }} className="social-link">
                 <FaInstagram size={24} /> Follow 
               </a>
