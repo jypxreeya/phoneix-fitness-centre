@@ -23,7 +23,7 @@ const transformations = [
     result: '+8kg Muscle Mass',
     quote: '"I was stuck at a plateau for years. The coaches here unlocked my true strength potential."'
   },{
-    id: 2,
+    id: 3,
     image: '/assets/t3.jpg',
     name: 'shalini',
     duration: '120 days transformation',
@@ -66,8 +66,7 @@ const TransformationsPreview = () => {
                 backgroundColor: 'rgba(26, 26, 26, 0.6)', 
                 borderRadius: '16px',
                 overflow: 'hidden',
-                border: '1px solid rgba(255,255,255,0.05)',
-                '@media (max-width: 768px)': { flexDirection: 'column' } 
+                border: '1px solid rgba(255,255,255,0.05)'
               }} className="trans-card">
                 
                 <div style={{ flex: '1', minHeight: '300px' }} className="trans-img-container">
