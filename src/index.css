@@ -228,4 +228,85 @@ h1, h2, h3, h4, h5, h6 {
   #hero > div:nth-child(3) {
     background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 100%) !important;
   }
+
+  /* =========================================
+     GLOBAL MOBILE OPTIMIZATIONS 
+     ========================================= */
+
+  /* 1. Global Layout & Spacing */
+  .section-padding {
+    padding: 3rem 0 !important;
+  }
+  .container {
+    padding: 0 1rem !important;
+  }
+  
+  /* Force all inline vertical paddings to scale down */
+  section, footer {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Force flex/grid gaps down */
+  div[style*="gap: 4rem"] { gap: 2rem !important; }
+  div[style*="gap: 2rem"] { gap: 1.5rem !important; }
+  div[style*="gap: 3rem"] { gap: 1.5rem !important; }
+
+  /* 2. Typography Scaling */
+  h1 { font-size: clamp(2rem, 10vw, 3rem) !important; }
+  h2 { font-size: clamp(1.8rem, 8vw, 2.2rem) !important; margin-bottom: 1rem !important; line-height: 1.1 !important; }
+  h3 { font-size: clamp(1.4rem, 6vw, 1.8rem) !important; }
+  h4 { font-size: clamp(1.1rem, 5vw, 1.3rem) !important; margin-bottom: 0.5rem !important; }
+  
+  p, .text-gray {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* 3. Cards, Containers, and Panels */
+  .glass-panel {
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+  }
+  
+  /* Fix inline paddings in cards */
+  div[style*="padding: 3rem"] { padding: 1.5rem !important; }
+  div[style*="padding: 2.5rem"] { padding: 1.5rem !important; }
+  div[style*="padding: 4rem 2rem"] { padding: 2rem 1.25rem !important; }
+  div[style*="padding: 3rem 2rem"] { padding: 1.5rem 1.25rem !important; }
+  
+  /* Prevent image/video containers from taking excessive vertical space */
+  /* WhyChooseUs side-by-side flex fix */
+  #about .container { gap: 2rem !important; flex-direction: column !important; }
+  #about .container > div:first-child { min-height: 300px !important; flex: 1 1 100% !important; width: 100% !important; }
+  #about .container > div:last-child { flex: 1 1 100% !important; width: 100% !important; }
+  
+  /* Contact form min-height */
+  #contact .glass-panel { min-height: auto !important; }
+
+  /* 4. Buttons and Navigation */
+  .btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  /* 5. Footer Adjustments */
+  footer {
+    padding-top: 2.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  footer > div[style*="paddingTop: 2rem"] {
+    padding-top: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  /* 6. Enforce responsiveness / prevent overflow */
+  img, video, canvas {
+    max-width: 100% !important;
+  }
+  .app, body {
+    overflow-x: hidden !important;
+  }
 }
+
