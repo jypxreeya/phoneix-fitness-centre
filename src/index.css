@@ -18,6 +18,14 @@
   box-sizing: border-box;
 }
 
+/* Base Visibility Toggles for App Redesign */
+.mobile-programs-bento {
+  display: none;
+}
+.desktop-programs-grid {
+  display: grid;
+}
+
 html, body {
   width: 100%;
   min-height: 100vh;
@@ -235,10 +243,12 @@ h1, h2, h3, h4, h5, h6 {
 
   /* 1. Global Layout & Spacing */
   .section-padding {
-    padding: 3rem 0 !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
   }
   .container {
-    padding: 0 1rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
   
   /* Force all inline vertical paddings to scale down */
@@ -307,6 +317,101 @@ h1, h2, h3, h4, h5, h6 {
   }
   .app, body {
     overflow-x: hidden !important;
+  }
+
+  /* =========================================
+     PREMIUM 3D BENTO APP LAYOUT (Programs)
+     ========================================= */
+  .desktop-programs-grid {
+    display: none !important;
+  }
+  
+  .mobile-programs-bento {
+    display: flex !important;
+    flex-direction: column;
+    gap: 3rem !important; /* Space for popping images */
+    padding-top: 2rem;
+  }
+  
+  .mobile-bento-card {
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    position: relative;
+    overflow: visible !important; /* CRITICAL for 3D breakout */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    margin-top: 1rem;
+  }
+  
+  .mobile-bento-image {
+    position: absolute;
+    right: -5%;
+    top: -40px;
+    height: 160px !important;
+    width: auto !important;
+    max-width: none !important;
+    z-index: 10;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.9));
+    pointer-events: none;
+  }
+  
+  .mobile-bento-content {
+    position: relative;
+    z-index: 2;
+    width: 65%; /* Leave room on right for the 3D image */
+  }
+  
+  .mobile-bento-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-bento-title {
+    font-size: 1.25rem !important;
+    font-weight: 800;
+    margin-bottom: 0.5rem !important;
+    font-family: 'Inter', sans-serif !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+  }
+  
+  .mobile-bento-desc {
+    font-size: 0.9rem !important;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  .mobile-bento-link {
+    font-size: 0.85rem !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .mobile-bento-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 0;
+    pointer-events: none;
   }
 }
 
