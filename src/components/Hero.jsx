@@ -83,7 +83,6 @@ const Hero = () => {
         
         <div ref={btnGroupRef} style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
           <a href="/#contact" className="btn-primary" style={{ textDecoration: 'none' }}>Book Consultation</a>
-          <a href="/#contact" className="btn-secondary" style={{ textDecoration: 'none' }}>Join Today</a>
         </div>
       </div>
     </section>

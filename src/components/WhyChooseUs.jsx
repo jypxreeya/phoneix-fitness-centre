@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
         
         {/* Left Side Image */}
         <div style={{ flex: '1 1 400px', position: 'relative', minHeight: '500px', borderRadius: '16px', overflow: 'hidden' }}>
-          {/* Placeholder for the image */}
+          {/* Placeholder for the video */}
           <motion.div style={{ 
             width: '100%', 
             height: '120%', 
@@ -67,12 +67,26 @@ const WhyChooseUs = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundImage: 'url("/assets/win 4.jpg")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
+            overflow: 'hidden'
           }}>
+            <video 
+              src="/assets/about.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                zIndex: 0
+              }}
+            />
             {/* Overlay Gradient */}
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to right, rgba(0,0,0,0.8), transparent)' }}></div>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to right, rgba(0,0,0,0.8), transparent)', zIndex: 1 }}></div>
           </motion.div>
         </div>
 
