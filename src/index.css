@@ -151,3 +151,38 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-black);
   transform: translateY(-2px);
 }
+
+/* Hero Section Responsive Styles */
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  max-width: 600px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background-position: 80% center; /* Shift to right on mobile to show athletes */
+  }
+  
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}

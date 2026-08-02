@@ -44,7 +44,7 @@ const Hero = () => {
     }}>
       
       {/* Background Image */}
-      <div style={{
+      <div className="hero-bg" style={{
         position: 'absolute',
         top: 0,
         left: 0,
@@ -52,9 +52,7 @@ const Hero = () => {
         height: '100%',
         zIndex: 0,
         backgroundColor: '#0a0a0a',
-        backgroundImage: `url(${heroBannerImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundImage: `url(${heroBannerImg})`
       }}></div>
 
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none' }}>
@@ -73,13 +71,13 @@ const Hero = () => {
       }}></div>
 
       <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-        <h1 ref={titleRef} style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.2, marginBottom: '2rem' }}>
+        <h1 ref={titleRef} className="hero-title">
           <div style={{ overflow: 'hidden' }}><span>Train Hard.</span></div>
           <div style={{ overflow: 'hidden' }}><span>Perform Better.</span></div>
           <div style={{ overflow: 'hidden' }}><span className="text-accent">Become Unstoppable.</span></div>
         </h1>
         
-        <p ref={subtitleRef} className="text-gray" style={{ maxWidth: '600px', fontSize: '1.15rem', lineHeight: 1.6, marginBottom: '3.5rem' }}>
+        <p ref={subtitleRef} className="hero-subtitle text-gray">
           Elite coaching, scientific training, sports performance, nutrition guidance, and transformational fitness programs.
         </p>
         
